@@ -1,0 +1,286 @@
+:root {
+  --bg: #f4f5f3;
+  --surface: #ffffff;
+  --text: #22292f;
+  --text-muted: #5b6673;
+  --border: #e1e4e1;
+  --primary: #2f5d8a;
+  --primary-dark: #24486b;
+  --low: #3f8f4f;
+  --medium: #c98a1c;
+  --high: #c1443b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+header {
+  margin-bottom: 28px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+
+.task-form-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.task-form-section h2 {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+}
+
+.form-row {
+  margin-bottom: 14px;
+}
+
+.form-row-split {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row-split > div {
+  flex: 1;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-muted);
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--surface);
+  color: var(--text);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-error {
+  color: var(--high);
+  font-size: 0.85rem;
+  margin: -6px 0 12px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-weight: 600;
+}
+
+#submitBtn {
+  background: var(--primary);
+  color: #fff;
+}
+
+#submitBtn:hover {
+  background: var(--primary-dark);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+  background: var(--bg);
+}
+
+
+.controls-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.controls-section input {
+  flex: 1;
+}
+
+.controls-section select {
+  width: auto;
+}
+
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--medium);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.task-card.priority-low {
+  border-left-color: var(--low);
+}
+
+.task-card.priority-medium {
+  border-left-color: var(--medium);
+}
+
+.task-card.priority-high {
+  border-left-color: var(--high);
+}
+
+.task-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  font-weight: 600;
+  margin: 0 0 4px;
+  word-break: break-word;
+}
+
+.task-description {
+  margin: 0 0 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.task-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.priority-badge.low {
+  background: var(--low);
+}
+
+.priority-badge.medium {
+  background: var(--medium);
+}
+
+.priority-badge.high {
+  background: var(--high);
+}
+
+.task-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-actions button {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.task-actions button:hover {
+  background: var(--border);
+}
+
+.task-actions .delete-btn:hover {
+  background: var(--high);
+  color: #fff;
+  border-color: var(--high);
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 24px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .form-row-split {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .task-card {
+    flex-direction: column;
+  }
+
+  .task-actions {
+    flex-direction: row;
+  }
+}

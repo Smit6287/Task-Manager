@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Task Manager</h1>
+      <p class="subtitle">Add, edit, and track your tasks by priority</p>
+    </header>
+
+    <section class="task-form-section">
+      <h2 id="formHeading">Add a Task</h2>
+      <form id="taskForm">
+        <div class="form-row">
+          <label for="titleInput">Title</label>
+          <input type="text" id="titleInput" placeholder="e.g. Finish lab report">
+        </div>
+
+        <div class="form-row">
+          <label for="descriptionInput">Description</label>
+          <textarea id="descriptionInput" placeholder="Add any extra details (optional)" rows="2"></textarea>
+        </div>
+
+        <div class="form-row form-row-split">
+          <div>
+            <label for="dueDateInput">Due Date</label>
+            <input type="date" id="dueDateInput">
+          </div>
+          <div>
+            <label for="priorityInput">Priority</label>
+            <select id="priorityInput">
+              <option value="low">Low</option>
+              <option value="medium" selected>Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="formError" class="form-error hidden"></p>
+
+        <div class="form-actions">
+          <button type="submit" id="submitBtn">Add Task</button>
+          <button type="button" id="cancelEditBtn" class="secondary-btn hidden">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="controls-section">
+      <input type="text" id="searchInput" placeholder="Search tasks by title...">
+      <select id="priorityFilter">
+        <option value="all">All Priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </section>
+
+    <section class="task-list-section">
+      <div id="taskList" class="task-list"></div>
+      <p id="emptyMessage" class="empty-message hidden">No tasks found.</p>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
